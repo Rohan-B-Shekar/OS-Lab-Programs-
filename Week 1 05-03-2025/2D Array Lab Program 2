@@ -1,0 +1,41 @@
+Q.2 2D Array 
+
+#include <stdio.h>
+
+int main() {
+   
+    int arr[2][3];
+
+   
+    printf("Please enter 6 integer values for the 2D array (2 rows, 3 columns):\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("arr[%d][%d] = ", i, j);
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+   
+    printf("\nElements of the 2D array are:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+O/P -
+Please enter 6 integer values for the 2D array (2 rows, 3 columns):
+arr[0][0] = 1
+arr[0][1] = 2
+arr[0][2] = 3
+arr[1][0] = 4
+arr[1][1] = 5
+arr[1][2] = 6
+
+Elements of the 2D array are:
+1 2 3 
+4 5 6 

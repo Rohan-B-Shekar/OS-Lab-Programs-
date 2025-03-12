@@ -1,0 +1,127 @@
+Q.3 Stacks
+
+#include <stdio.h>
+
+#define MAX 5
+
+int stack[MAX];
+int top = -1;
+
+
+void push(int value) {
+    if (top == MAX - 1) {
+        printf("Stack Overflow!\n");
+    } else {
+        stack[++top] = value;
+        printf("%d pushed to stack\n", value);
+    }
+}
+
+
+int pop() {
+    if (top == -1) {
+        printf("Stack Underflow!\n");
+        return -1;
+    } else {
+        return stack[top--];
+    }
+}
+
+void display() {
+    if (top == -1) {
+        printf("Stack is empty.\n");
+    } else {
+        printf("Stack contents: ");
+        for (int i = 0; i <= top; i++) {
+            printf("%d ", stack[i]);
+        }
+        printf("\n");
+    }
+}
+
+
+int main() {
+    int choice, value;
+
+    while (1) {
+        printf("\nChoose an operation:\n");
+        printf("1. Push\n");
+        printf("2. Pop\n");
+        printf("3. Display Stack\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch(choice) {
+            case 1:
+                printf("Enter a value to push: ");
+                scanf("%d", &value);
+                push(value);
+                break;
+
+            case 2:
+                value = pop();
+                if (value != -1) {
+                    printf("%d popped from stack\n", value);
+                }
+                break;
+
+            case 3:
+                display();
+                break;
+
+            case 4:
+                printf("Exiting the program.\n");
+                return 0;
+
+            default:
+                printf("Invalid choice, please try again.\n");
+        }
+    }
+    return 0;
+}
+
+
+O/P -
+
+Choose an operation:
+1. Push
+2. Pop
+3. Display Stack
+4. Exit
+Enter your choice: 1
+Enter a value to push: 1
+1 pushed to stack
+
+Choose an operation:
+1. Push
+2. Pop
+3. Display Stack
+4. Exit
+Enter your choice: 1
+Enter a value to push: 2
+2 pushed to stack
+
+Choose an operation:
+1. Push
+2. Pop
+3. Display Stack
+4. Exit
+Enter your choice: 3
+Stack contents: 1 2
+
+Choose an operation:
+1. Push
+2. Pop
+3. Display Stack
+4. Exit
+Enter your choice: 2
+2 popped from stack
+
+Choose an operation:
+1. Push
+2. Pop
+3. Display Stack
+4. Exit
+Enter your choice: 3
+Stack contents: 1
